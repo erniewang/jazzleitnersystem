@@ -1,0 +1,8 @@
+head say Jazz Standards Memory Map
+below should be a container that holds the 3 categories, better know 23 [ top 23 ] , essential 73 , extra 206, and the rest. each option loads the amount of jazz standards into a playlist
+the focus should be the lightner system to organize the standards.
+All the boxes should be in stage 1 first. and this is depending on which mode you chose. 
+if someone is condident they know the tune to heart, then they can directly move to stage 5, which is permanent.
+there will be a max of 4 songs in each category. so if one song gets demoted, it will replace the lowest value song and shit. the replaced songs will be on a queue to come back once the stage 
+is empty again
+each song in the list will be a small div of a title, a place to add back track link, and a checkbox of do you know the song or not.

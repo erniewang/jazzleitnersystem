@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazz Progress Tracker</title>
+</head>
+<style>
+    body {
+        background-color: rgb(186, 186, 186);
+        background-image: url(backgrUND.png);
+    }
+
+    header {
+        height: 100px;
+        background-color: rgb(183, 183, 183);
+        border: 2px solid #636363;
+        border-radius: 90px;
+        padding: 20px;
+    }
+</style>
+<header>
+    <center>
+        <div style="border: 2px solid #636363;
+            border-radius: 90px; background-color: rgb(159, 159, 159); width: 70%; height: 35px; margin-top: 4px;">
+            <center><strong>- - | | | | Jazz
+                    Standards And Patterns Tracker | | | | - -</strong> </center>
+        </div>
+        <button id="progress" style="margin-bottom: 5px; margin-top: 25px; margin-right: 5px; margin-left: 6px; border: 2px solid #636363;
+        border-radius: 90px; background-color: rgb(159, 159, 159);" onclick="loadStuff(this)">My
+            Progress</button>
+        <button id="leaderboard" style="margin-bottom: 5px; border: 2px solid #636363;
+        border-radius: 90px; background-color: rgb(187, 187, 187);" onclick="loadStuff(this)">Leaderboard</button>
+        <a href="https://www.mineplex.com/" target="_blank" style="margin-bottom: 5px; border: 2px solid #636363;
+        border-radius: 90px; background-color: rgb(227, 227, 227);">. Help .</a>
+        <button id="homePage" style="margin-bottom: 5px; border: 2px solid #636363;
+        border-radius: 90px; background-color: rgb(227, 227, 227);" onclick="loadStuff(this)">Home</button>
+        <button style="margin-bottom: 5px; border: 2px solid #636363;
+        border-radius: 90px; background-color: rgb(227, 227, 227);" onclick="save()">Save</button>
+    </center>
+</header>
+
+<body>
+    <div id="welcome" style="display: none;">
+        <div id="welcomeEssay"
+            style="background-color: rgb(190, 190, 190); height: 685px; width: 420px; margin: 15px; font-size: 28px; position: fixed; border: 2px solid #636363;">
+            <p>Welcome to Ernie's Jazzcards, your one-stop hub for mastering the art of jazz music. Leveraging the tried
+                and
+                true Leitner System, we ensure structured and efficient learning, allowing you to grasp intricate
+                patterns,
+                delve into etudes, and effortlessly glide through standards.
+            </p>
+            Whether you're a budding musician or an experienced
+            maestro, our systematic approach ensures every concept sticks. Dive in, and let the rhythms, harmonies, and
+            soul of jazz become an inseparable part of your musical journey. Click the buttons to get started!
+        </div>
+        <div id="welcomeImage"
+            style="background-size: cover;background-image: url(welcomePicture.png);height: 685px; width: 800px; margin: 15px; font-size: 18px; position: fixed; left: 700px; border: 2px solid #636363;">
+        </div>
+    </div>
+    <div id="standards">
+        <style>
+            #standards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .box {
+                height: 600px;
+                width: 190px;
+                background-color: rgb(173, 173, 173);
+                margin: 1.6%;
+                padding-top: 1px;
+                border: 2px solid #646363;
+                border-radius: 30px;
+                text-align: center;
+                /* Center the text horizontally */
+                overflow: auto;
+                background-image: url(mm.png);
+                background-size: contain;
+            }
+
+            .smallBox {
+                height: 150px;
+                width: 165px;
+                background-color: rgb(212, 212, 212);
+                margin: 4px;
+                border: 1px solid #646363;
+                border-radius: 10px;
+                overflow: auto;
+            }
+        </style>
+        <div class="box" id="level1">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>TODAY </strong><button id="firstButton" onclick="add(this)">Add</button>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level2" style="background-image: url(mmm.png);">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>TOMMOROW </strong>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level3">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>NEXT NEXT DAY </strong>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level4" style="background-image: url(music\ notes.png);">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>NEXT WEEK </strong>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level5" style="background-image: url(silverbackground.png);">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>NEXT NEXT WEEK </strong>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level6">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>NEXT MONTH </strong>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+        <div class="box" id="level7" style="background-image: url(mmm.png);">
+            <header style="height: 20px; margin: 0px; position: relative; width: 125px;">
+                <strong>PERMANENT </strong><button id="finalPosition" style="display: none;"></button>
+            </header>
+            <div style="height: 15px;"></div>
+        </div>
+    </div>
+</body>
+<script src=" rawData.js">
+</script>
+<script src="buttons.js"></script>
+<script src="data.js"></script>
+
+</html>
